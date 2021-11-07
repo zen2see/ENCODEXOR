@@ -1,0 +1,71 @@
+{
+  "name": "encodexor",
+  "version": "1.0.0",
+  "description": "UNICODE",
+  "main": "index.ts",
+  "repository": "https://github.com/zen2see/ENCODEXOR.git",
+  "author": "Z zen2see@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "react-app:build": "yarn workspace @ENCODEXOR/reactapp build --max-old-space-size=12288",
+    "react-app:eject": "yarn workspace @ENCODEXOR/reactapp eject",
+    "react-app:start": "yarn workspace @ENCODEXOR/reactapp start",
+    "react-app:test": "yarn workspace @ENCODEXOR/reactapp test",
+    "build": "yarn workspace @ENCODEXOR/reactapp build --max-old-space-size=12288",
+    "prettier": "yarn workspace @ENCODEXOR/reactapp prettier",
+    "chain": "yarn workspace @ENCODEXOR/hardhat chain",
+    "fork": "yarn workspace @ENCODEXOR/hardhat fork",
+    "node": "yarn workspace @ENCODEXOR/hardhat chain",
+    "test": "yarn workspace @ENCODEXOR/hardhat test",
+    "start": "yarn workspace @ENCODEXOR/reactapp start",
+    "compile": "yarn workspace @ENCODEXOR/hardhat compile",
+    "deploy": "yarn workspace @ENCODEXOR/hardhat deploy",
+    "watch": "yarn workspace @ENCODEXOR/hardhat watch",
+    "accounts": "yarn workspace @ENCODEXOR/hardhat accounts",
+    "balance": "yarn workspace @ENCODEXOR/hardhat balance",
+    "send": "yarn workspace @ENCODEXOR/hardhat send",
+    "ipfs": "yarn workspace @ENCODEXOR/reactapp ipfs",
+    "surge": "yarn workspace @ENCODEXOR/reactapp surge",
+    "s3": "yarn workspace @ENCODEXOR/reactapp s3",
+    "ship": "yarn workspace @ENCODEXOR/reactapp ship",
+    "generate": "yarn workspace @ENCODEXOR/hardhat generate",
+    "account": "yarn workspace @ENCODEXOR/hardhat account",
+    "mineContractAddress": "cd packages/hardhat && npx hardhat mineContractAddress",
+    "wallet": "cd packages/hardhat && npx hardhat wallet",
+    "fundedwallet": "cd packages/hardhat && npx hardhat fundedwallet",
+    "flatten": "cd packages/hardhat && npx hardhat flatten",
+    "clean": "cd packages/hardhat && npx hardhat clean",
+    "run-graph-node": "yarn workspace @ENCODEXOR/services run-graph-node",
+    "remove-graph-node": "yarn workspace @ENCODEXOR/services remove-graph-node",
+    "clean-graph-node": "yarn workspace @ENCODEXOR/services clean-graph-node",
+    "graph-prepare": "mustache packages/subgraph/config/config.json packages/subgraph/src/subgraph.template.yaml > packages/subgraph/subgraph.yaml",
+    "graph-codegen": "yarn workspace @ENCODEXOR/subgraph graph codegen",
+    "graph-build": "yarn workspace @ENCODEXOR/subgraph graph build",
+    "graph-create-local": "yarn workspace @ENCODEXOR/subgraph graph create --node http://localhost:8020/ ENCODEXOR/your-contract",
+    "graph-remove-local": "yarn workspace @ENCODEXOR/subgraph graph remove --node http://localhost:8020/ ENCODEXOR/your-contract",
+    "graph-deploy-local": "yarn workspace @ENCODEXOR/subgraph graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 ENCODEXOR/your-contract",
+    "graph-ship-local": "yarn graph-prepare && yarn graph-codegen && yarn graph-deploy-local",
+    "deploy-and-graph": "yarn deploy && yarn graph-ship-local",
+    "theme": "yarn workspace @ENCODEXOR/reactapp theme",
+    "watch-theme": "yarn workspace @ENCODEXOR/reactapp watch",
+    "postinstall": "husky install"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@graphprotocol/graph-ts",
+      "**/@graphprotocol/graph-ts/**",
+      "**/hardhat",
+      "**/hardhat/**",
+      "**/hardhat-ts",
+      "**/hardhat-ts/**"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^7.0.2"
+  }
+}
